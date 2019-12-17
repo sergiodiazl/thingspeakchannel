@@ -18,9 +18,9 @@ export default class GraphsContainer extends Component {
     fetch('https://api.thingspeak.com/channels/937838/feeds.json?api_key=XMD0WU2YR6LBPMN9&results=10')
       .then(response => response.json())
       .then(data => this.setState({ feed: data, feedReady: true ,error:false}, console.log(this.state)))
-      .then(setTimeout(this.fetchFeed, 5000))
+      .then(setTimeout(this.fetchFeed, 15000))
       .catch(function () {
-        setTimeout(this.fetchFeed, 5000);
+        setTimeout(this.fetchFeed, 15000);
         this.setState({error:false})
       }
       
